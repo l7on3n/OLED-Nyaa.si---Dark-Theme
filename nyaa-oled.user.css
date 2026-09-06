@@ -1,19 +1,19 @@
 /* ==UserStyle==
 @name           OLED Nyaa.si - Dark Theme
 @namespace      github.com/l7on3n
-@version        1.0.0
+@version        1.1.0
 @description    True OLED Dark Theme for Nyaa.si & Sukebei.
 @author         l7on3n (Faturrahman Ilhami D)
 @license        MIT
 @preprocessor   default
-@updateURL      https://github.com/l7on3n/OLED-Nyaa.sai---Dark-Theme
-@downloadURL    https://github.com/l7on3n/OLED-Nyaa.sai---Dark-Theme
+@updateURL      https://github.com/l7on3n/OLED-Nyaa.si---Dark-Theme
+@downloadURL    https://github.com/l7on3n/OLED-Nyaa.si---Dark-Theme
 ==/UserStyle== */
 
 @-moz-document domain("nyaa.si"), domain("sukebei.nyaa.si") {
 
     /* ============================================================
-       THEME OLED NYAA.SI — Dark Theme (V1.0)
+       THEME OLED NYAA.SI — Dark Theme (V1.1)
        License under MIT 2026 l7on3n(Faturrahman Ilhami D)
        ============================================================ */
 
@@ -526,6 +526,50 @@
 
     #torrent-description a:hover {
         color: var(--accent-hover) !important;
+    }
+
+    /* ============ CODE TAGS & HR FIX ============ */
+    /* Fix tag code (Tech Specs, Audios, Subtitles, dll) */
+    code,
+    #torrent-description code {
+        background-color: #1a1a1a !important;
+        color: var(--accent) !important;
+        border: 1px solid var(--border-medium) !important;
+        padding: 2px 6px !important;
+        border-radius: 4px !important;
+        font-size: 0.9em !important;
+    }
+
+    /* Fix garis pemisah (HR) agar tidak putih menyala */
+    hr,
+    #torrent-description hr {
+        border-top: 1px solid var(--border-medium) !important;
+        border-bottom: none !important;
+        border-left: none !important;
+        border-right: none !important;
+        opacity: 0.8;
+        margin-top: 15px !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* ============ PRE & CODE BLOCK FIX ============ */
+    pre,
+    #torrent-description pre {
+        background-color: #161616 !important;
+        border: 1px solid var(--border-medium) !important;
+        color: var(--text-title) !important;
+        border-radius: 4px !important;
+        padding: 10px 12px !important;
+    }
+
+    /* Reset style tag code di dalam pre agar tidak tumpang tindih */
+    pre code,
+    #torrent-description pre code {
+        background-color: transparent !important;
+        border: none !important;
+        color: var(--accent) !important;
+        padding: 0 !important;
+        font-size: 0.95em !important;
     }
 
     /* Torrent File List Panel */
