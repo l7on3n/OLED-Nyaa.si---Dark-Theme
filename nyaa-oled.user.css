@@ -1,0 +1,777 @@
+/* ==UserStyle==
+@name           OLED Nyaa.si - Dark Theme
+@namespace      github.com/l7on3n
+@version        1.0.0
+@description    True OLED Dark Theme for Nyaa.si & Sukebei.
+@author         l7on3n (Faturrahman Ilhami D)
+@license        MIT
+@preprocessor   default
+@updateURL      https://github.com/l7on3n/
+@downloadURL    https://github.com/l7on3n/
+==/UserStyle== */
+
+@-moz-document domain("nyaa.si"), domain("sukebei.nyaa.si") {
+
+    /* ============================================================
+       THEME OLED NYAA.SI — Dark Theme (V1.0)
+       License under MIT 2026 l7on3n(Faturrahman Ilhami D)
+       ============================================================ */
+
+    :root {
+        /* --- Base Surface --- */
+        --bg-body: #000000;
+        --bg-table: #121212;
+        --bg-navbar: #0a0a0a;
+        --bg-hover: #1e1e1e;
+        --bg-active: #262626;
+
+        /* --- Text --- */
+        --text-title: #e0e0e0;
+        --text-body: #a0a0a0;
+        --text-muted: #707070;
+        --text-inverse: #000000;
+
+        /* --- Border --- */
+        --border-subtle: #1f1f1f;
+        --border-medium: #2e2e2e;
+        --border-strong: #404040;
+
+        /* --- Accent --- */
+        --accent: #4d9fff;
+        --accent-hover: #6ab0ff;
+        --accent-glow: rgba(77, 159, 255, 0.2);
+
+        /* Row & Panel Status (Solid Dark) --- */
+        --danger-bg: #2a1215;
+        --danger-border: #4a2025;
+        --danger-bg-hover: #3a1a1e;
+
+        --success-bg: #122a18;
+        --success-border: #204a30;
+        --success-bg-hover: #1a3a22;
+    }
+
+    /* Body */
+    body {
+        background-color: var(--bg-body) !important;
+        color: var(--text-title) !important;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    /* Nabar */
+    .navbar.navbar-default.navbar-inverse,
+    .navbar.navbar-inverse {
+        background-color: var(--bg-navbar) !important;
+        border-bottom: 1px solid var(--border-subtle) !important;
+    }
+
+    .navbar.navbar-inverse .navbar-brand {
+        color: var(--accent) !important;
+        font-weight: 600;
+    }
+
+    .navbar.navbar-inverse .navbar-brand:hover {
+        color: var(--accent-hover) !important;
+    }
+
+    .navbar.navbar-inverse .navbar-nav > li > a {
+        color: var(--text-body) !important;
+        transition: color 0.15s ease, background-color 0.15s ease;
+    }
+
+    .navbar.navbar-inverse .navbar-nav > li > a:hover,
+    .navbar.navbar-inverse .navbar-nav > li > a:focus {
+        color: var(--text-title) !important;
+        background-color: var(--bg-hover) !important;
+    }
+
+    .navbar.navbar-inverse .navbar-nav > .active > a,
+    .navbar.navbar-inverse .navbar-nav > .open > a,
+    .navbar.navbar-inverse .navbar-nav > .active > a:hover,
+    .navbar.navbar-inverse .navbar-nav > .open > a:hover {
+        background-color: var(--bg-active) !important;
+        color: var(--accent) !important;
+    }
+
+    .navbar.navbar-inverse .navbar-toggle {
+        border-color: var(--border-medium) !important;
+        background-color: var(--bg-navbar) !important;
+    }
+
+    .navbar.navbar-inverse .navbar-toggle:hover,
+    .navbar.navbar-inverse .navbar-toggle:focus {
+        background-color: var(--bg-hover) !important;
+    }
+
+    .navbar.navbar-inverse .navbar-toggle .icon-bar {
+        background-color: var(--text-body) !important;
+    }
+
+    /* DROPDOWN & BOOTSTRAP-SELECT */
+    .dropdown-menu,
+    .bootstrap-select .dropdown-menu {
+        background-color: #161616 !important;
+        border: 1px solid var(--border-medium) !important;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.8) !important;
+    }
+
+    .dropdown-menu > li > a,
+    .bootstrap-select .dropdown-menu > li > a {
+        color: var(--text-body) !important;
+    }
+
+    .dropdown-menu > li > a:hover,
+    .dropdown-menu > li > a:focus,
+    .bootstrap-select .dropdown-menu > li > a:hover,
+    .bootstrap-select .dropdown-menu > li > a:focus {
+        background-color: var(--bg-hover) !important;
+        color: var(--text-title) !important;
+    }
+
+    .dropdown-menu > .active > a,
+    .bootstrap-select .dropdown-menu > li.selected > a {
+        background-color: var(--accent) !important;
+        color: var(--text-inverse) !important;
+    }
+
+    .dropdown-menu > .active > a .check-mark,
+    .bootstrap-select .dropdown-menu > li.selected > a .check-mark {
+        color: var(--text-inverse) !important;
+    }
+
+    .dropdown-menu .divider {
+        background-color: var(--border-subtle) !important;
+    }
+
+    .bootstrap-select .btn-default,
+    .bootstrap-select .btn.dropdown-toggle {
+        background-color: #161616 !important;
+        border-color: var(--border-medium) !important;
+        color: var(--text-title) !important;
+    }
+
+    .bootstrap-select .btn-default:hover,
+    .bootstrap-select .btn.dropdown-toggle:hover {
+        background-color: var(--bg-hover) !important;
+        border-color: var(--border-strong) !important;
+    }
+
+    .bootstrap-select .btn-default:focus,
+    .bootstrap-select .btn.dropdown-toggle:focus {
+        border-color: var(--accent) !important;
+        box-shadow: 0 0 0 2px var(--accent-glow) !important;
+    }
+
+    .bootstrap-select .dropdown-toggle .filter-option {
+        color: var(--text-title) !important;
+    }
+
+    .bootstrap-select .bs-caret .caret {
+        border-top-color: var(--text-muted) !important;
+    }
+
+    /* FORM & INPUT */
+    .form-control {
+        background-color: #161616 !important;
+        border-color: var(--border-medium) !important;
+        color: var(--text-title) !important;
+    }
+
+    .form-control:focus {
+        border-color: var(--accent) !important;
+        box-shadow: 0 0 0 2px var(--accent-glow) !important;
+        background-color: #1c1c1c !important;
+    }
+
+    .form-control::placeholder {
+        color: var(--text-muted) !important;
+    }
+
+    .input-group .input-group-btn .btn-default {
+        background-color: #161616 !important;
+        border-color: var(--border-medium) !important;
+        color: var(--text-title) !important;
+    }
+
+    .input-group .input-group-btn .btn-default:hover {
+        background-color: var(--bg-hover) !important;
+        border-color: var(--border-strong) !important;
+    }
+
+    .btn-primary {
+        background-color: #1a1a1a !important;
+        border-color: var(--border-medium) !important;
+        color: var(--accent) !important;
+        transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active {
+        background-color: var(--bg-hover) !important;
+        border-color: var(--accent) !important;
+        color: var(--accent-hover) !important;
+        box-shadow: 0 0 8px var(--accent-glow) !important;
+    }
+
+    .btn-default {
+        background-color: #161616 !important;
+        border-color: var(--border-medium) !important;
+        color: var(--text-title) !important;
+    }
+
+    .btn-default:hover,
+    .btn-default:focus {
+        background-color: var(--bg-hover) !important;
+        border-color: var(--border-strong) !important;
+        color: var(--text-title) !important;
+    }
+
+    /* Table - Home & Search List */
+    .table-responsive {
+        background-color: var(--bg-table) !important;
+        border: 1px solid var(--border-medium) !important;
+        border-radius: 6px;
+    }
+
+    table.table {
+        background-color: transparent !important;
+        color: var(--text-title) !important;
+    }
+
+    table.table.table-bordered {
+        border-color: var(--border-medium) !important;
+    }
+
+    table.table.table-bordered > thead > tr > th,
+    table.table.table-bordered > thead > tr > td {
+        border-color: var(--border-medium) !important;
+    }
+
+    table.table.table-bordered > tbody > tr > td,
+    table.table.table-bordered > tbody > tr > th {
+        border-color: var(--border-subtle) !important;
+    }
+
+    table.table > thead > tr > th {
+        background-color: #1a1a1a !important;
+        color: var(--text-body) !important;
+        border-bottom: 2px solid var(--border-medium) !important;
+        font-weight: 600;
+    }
+
+    table.table > thead > tr > th a {
+        color: var(--text-body) !important;
+    }
+
+    table.table > thead > tr > th a:hover {
+        color: var(--accent) !important;
+    }
+
+    table.table.table-striped > tbody > tr:nth-of-type(odd) {
+        background-color: rgba(255, 255, 255, 0.02) !important;
+    }
+
+    table.table.table-striped > tbody > tr:nth-of-type(even) {
+        background-color: transparent !important;
+    }
+
+    table.table.table-hover > tbody > tr:hover {
+        background-color: var(--bg-hover) !important;
+        transition: background-color 0.12s ease;
+    }
+
+    /* Row Status - Main List */
+    table.table > tbody > tr.danger,
+    table.table > tbody > tr.danger > td {
+        background-color: var(--danger-bg) !important;
+        border-color: var(--danger-border) !important;
+    }
+
+    table.table > tbody > tr.success,
+    table.table > tbody > tr.success > td {
+        background-color: var(--success-bg) !important;
+        border-color: var(--success-border) !important;
+    }
+
+    table.table > tbody > tr.danger:hover,
+    table.table > tbody > tr.danger:hover > td {
+        background-color: var(--danger-bg-hover) !important;
+    }
+
+    table.table > tbody > tr.success:hover,
+    table.table > tbody > tr.success:hover > td {
+        background-color: var(--success-bg-hover) !important;
+    }
+
+    table.table > tbody > tr.default,
+    table.table > tbody > tr.default > td {
+        background-color: transparent !important;
+    }
+
+    /* Main Table Text Colors */
+    table.table > tbody > tr > td:nth-child(2) a,
+    table.table > tbody > tr > td:nth-child(2) a:visited {
+        color: var(--text-title) !important;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease;
+    }
+
+    table.table > tbody > tr > td:nth-child(2) a:hover,
+    table.table > tbody > tr > td:nth-child(2) a:focus {
+        color: var(--accent) !important;
+        text-decoration: none !important;
+    }
+
+    /* Comments Badge on Main List */
+    a.comments,
+    a.comments:visited,
+    table.table > tbody > tr > td a.comments {
+        background-color: transparent !important;
+        color: var(--text-muted) !important;
+        border: none !important;
+        padding: 2px 4px !important;
+        margin-left: 6px;
+        font-size: 0.85em;
+        text-decoration: none !important;
+        transition: color 0.15s ease;
+    }
+
+    a.comments:hover,
+    a.comments:focus,
+    table.table > tbody > tr > td a.comments:hover {
+        background-color: transparent !important;
+        color: var(--accent) !important;
+    }
+
+    a.comments i,
+    a.comments .fa {
+        color: inherit !important;
+        margin-right: 3px;
+    }
+
+    /* Main Table Metadata Columns */
+    table.table > tbody > tr > td:nth-child(4),
+    table.table > tbody > tr > td:nth-child(5),
+    table.table > tbody > tr > td:nth-child(8) {
+        color: var(--text-body) !important;
+        font-size: 0.95em;
+    }
+
+    table.table > tbody > tr > td:nth-child(6) {
+        color: #7ee69a !important;
+    }
+
+    table.table > tbody > tr > td:nth-child(7) {
+        color: #e06a6a !important;
+    }
+
+    table.table > tbody > tr > td:nth-child(3) .fa-download,
+    table.table > tbody > tr > td:nth-child(3) .fa-magnet {
+        color: var(--text-body) !important;
+        font-size: 1.1em;
+        transition: color 0.15s ease, transform 0.15s ease;
+    }
+
+    table.table > tbody > tr > td:nth-child(3) .fa-download:hover,
+    table.table > tbody > tr > td:nth-child(3) .fa-magnet:hover {
+        color: var(--accent) !important;
+        transform: scale(1.15);
+    }
+
+    table.table > tbody > tr > td:nth-child(1) img.category-icon {
+        filter: brightness(0.7) opacity(0.85) !important;
+        transition: filter 0.15s ease;
+    }
+
+    table.table > tbody > tr > td:nth-child(1) img.category-icon:hover {
+        filter: brightness(1) opacity(1) !important;
+    }
+
+    /* PANELS & VIEW PAGE (/view/<id>) */
+    .panel {
+        background-color: var(--bg-table) !important;
+        border: 1px solid var(--border-medium) !important;
+        box-shadow: none !important;
+    }
+
+    .panel-heading {
+        background-color: #1a1a1a !important;
+        border-bottom: 1px solid var(--border-medium) !important;
+        color: var(--text-title) !important;
+    }
+
+    .panel-title,
+    .panel-title > a,
+    .panel-title > a:hover,
+    .panel-title > a:focus {
+        color: var(--text-title) !important;
+        text-decoration: none !important;
+    }
+
+    /* Panel Header Status Variations */
+    .panel-success {
+        border-color: var(--success-border) !important;
+    }
+
+    .panel-success > .panel-heading {
+        background-color: var(--success-bg) !important;
+        border-color: var(--success-border) !important;
+        color: var(--text-title) !important;
+    }
+
+    .panel-danger {
+        border-color: var(--danger-border) !important;
+    }
+
+    .panel-danger > .panel-heading {
+        background-color: var(--danger-bg) !important;
+        border-color: var(--danger-border) !important;
+        color: var(--text-title) !important;
+    }
+
+    .panel-default {
+        border-color: var(--border-medium) !important;
+    }
+
+    .panel-default > .panel-heading {
+        background-color: #1a1a1a !important;
+        border-color: var(--border-medium) !important;
+        color: var(--text-title) !important;
+    }
+
+    .panel-body {
+        background-color: var(--bg-table) !important;
+        color: var(--text-body) !important;
+    }
+
+    .panel-footer {
+        background-color: #161616 !important;
+        border-top: 1px solid var(--border-medium) !important;
+        color: var(--text-body) !important;
+    }
+
+    .panel-footer a {
+        color: var(--accent) !important;
+        font-weight: 500;
+    }
+
+    .panel-footer a:hover {
+        color: var(--accent-hover) !important;
+    }
+
+    /* View Page Metadata Grid (.col-md-1 & .col-md-5) */
+    .panel-body .row > [class*="col-md-1"] {
+        color: var(--text-muted) !important;
+        font-weight: 600;
+    }
+
+    .panel-body .row > [class*="col-md-5"] {
+        color: var(--text-title) !important;
+    }
+
+    .panel-body .row a {
+        color: var(--accent) !important;
+    }
+
+    .panel-body .row a:hover {
+        color: var(--accent-hover) !important;
+    }
+
+    /* Override Inline Color Attributes for Seeders/Leechers */
+    .panel-body span[style*="color: green"],
+    .panel-body span[style*="color:green"] {
+        color: #7ee69a !important;
+        font-weight: bold;
+    }
+
+    .panel-body span[style*="color: red"],
+    .panel-body span[style*="color:red"] {
+        color: #e06a6a !important;
+        font-weight: bold;
+    }
+
+    /* Info Hash Block */
+    kbd {
+        background-color: #1a1a1a !important;
+        border: 1px solid var(--border-medium) !important;
+        color: var(--accent) !important;
+        box-shadow: none !important;
+        font-family: monospace;
+    }
+
+    /* Torrent Description Markdown */
+    #torrent-description {
+        background-color: var(--bg-table) !important;
+        color: var(--text-body) !important;
+    }
+
+    #torrent-description p,
+    #torrent-description div,
+    #torrent-description li,
+    #torrent-description span {
+        color: var(--text-body) !important;
+    }
+
+    #torrent-description strong,
+    #torrent-description b {
+        color: var(--text-title) !important;
+    }
+
+    #torrent-description a {
+        color: var(--accent) !important;
+        text-decoration: underline;
+    }
+
+    #torrent-description a:hover {
+        color: var(--accent-hover) !important;
+    }
+
+    /* Torrent File List Panel */
+    .torrent-file-list {
+        background-color: var(--bg-table) !important;
+        color: var(--text-body) !important;
+    }
+
+    .torrent-file-list li {
+        color: var(--text-body) !important;
+    }
+
+    .torrent-file-list .file-size {
+        color: var(--text-muted) !important;
+    }
+
+    .torrent-file-list i.fa {
+        color: var(--text-muted) !important;
+        margin-right: 6px;
+    }
+
+    /* Comments Section & Individual Comment Panels */
+    #collapse-comments {
+        background-color: var(--bg-table) !important;
+    }
+
+    .comment-panel {
+        background-color: #161616 !important;
+        border: 1px solid var(--border-medium) !important;
+        margin-top: 10px;
+        border-radius: 4px;
+    }
+
+    .comment-user {
+        color: var(--accent) !important;
+        font-weight: bold;
+    }
+
+    .comment-details {
+        color: var(--text-muted) !important;
+    }
+
+    .comment-body {
+        color: var(--text-body) !important;
+    }
+
+    /* Pagination Fix */
+    .pagination > li > a,
+    .pagination > li > span {
+        background-color: #161616 !important;
+        border-color: var(--border-medium) !important;
+        color: var(--text-body) !important;
+        transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .pagination > li > a:hover,
+    .pagination > li > span:hover {
+        background-color: var(--bg-hover) !important;
+        border-color: var(--border-strong) !important;
+        color: var(--text-title) !important;
+    }
+
+    .pagination > li.active > a,
+    .pagination > li.active > span,
+    .pagination > li.active > a:hover,
+    .pagination > li.active > span:hover,
+    .pagination > li.active > a:focus,
+    .pagination > li.active > span:focus {
+        background-color: #161616 !important;
+        border-color: var(--border-medium) !important;
+        color: var(--accent) !important;
+        font-weight: bold !important;
+    }
+
+    .pagination > li.disabled > a,
+    .pagination > li.disabled > span {
+        background-color: #161616 !important;
+        border-color: var(--border-subtle) !important;
+        color: var(--text-muted) !important;
+        opacity: 0.6;
+    }
+
+    /* Footer */
+    footer {
+        background-color: var(--bg-body) !important;
+        border-top: 1px solid var(--border-subtle) !important;
+        color: var(--text-muted) !important;
+    }
+
+    footer p {
+        color: var(--text-muted) !important;
+    }
+
+    footer a {
+        color: var(--text-body) !important;
+    }
+
+    footer a:hover {
+        color: var(--accent) !important;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--bg-body);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #2e2e2e;
+        border-radius: 5px;
+        border: 2px solid var(--bg-body);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #404040;
+    }
+
+    /* Misc */
+    .container {
+        background-color: transparent !important;
+    }
+
+    .navbar-form {
+        border-color: var(--border-subtle) !important;
+    }
+
+    .fa {
+        color: inherit;
+    }
+
+    .caret {
+        border-top-color: var(--text-muted) !important;
+    }
+
+    .tooltip-inner {
+        background-color: var(--bg-hover) !important;
+        border: 1px solid var(--border-medium) !important;
+        color: var(--text-title) !important;
+    }
+
+    .tooltip.top .tooltip-arrow {
+        border-top-color: var(--bg-hover) !important;
+    }
+
+    .tooltip.bottom .tooltip-arrow {
+        border-bottom-color: var(--bg-hover) !important;
+    }
+
+    ::selection {
+        background-color: var(--accent) !important;
+        color: var(--text-inverse) !important;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+        outline: 2px solid var(--accent) !important;
+        outline-offset: 2px !important;
+    }
+
+    .navbar-collapse {
+        border-color: var(--border-subtle) !important;
+    }
+
+    .bootstrap-select.open .dropdown-toggle,
+    .bootstrap-select.open .btn-default {
+        background-color: var(--bg-hover) !important;
+        border-color: var(--accent) !important;
+        box-shadow: 0 0 0 2px var(--accent-glow) !important;
+    }
+
+    table.table > thead > tr > th.sorting_desc a,
+    table.table > thead > tr > th.sorting_asc a {
+        color: var(--accent) !important;
+    }
+
+    .navbar-form .form-control {
+        background-color: #161616 !important;
+        border-color: var(--border-medium) !important;
+    }
+
+    .navbar-form .form-control:focus {
+        border-color: var(--accent) !important;
+        box-shadow: 0 0 0 2px var(--accent-glow) !important;
+    }
+
+    .navbar-nav .fa-user {
+        color: var(--text-body) !important;
+    }
+
+    .navbar-nav .open .fa-user {
+        color: var(--accent) !important;
+    }
+
+    /* Button Flag/Toggle */
+    .btn-group .btn-grey,
+    .btn-group .btn-default {
+        background-color: #21262d !important;
+        color: #c9d1d9 !important;
+        border-color: #30363d !important;
+    }
+    .btn-group .btn-danger {
+        background-color: #3c1e1e !important;
+        color: #f85149 !important;
+        border-color: #8b2828 !important;
+    }
+    .btn-group .btn-warning {
+        background-color: #3d2d00 !important;
+        color: #e3b341 !important;
+        border-color: #7d5a00 !important;
+    }
+
+    /* Tab Write & Preview */
+    .nav-tabs {
+        border-bottom: 1px solid #30363d !important;
+    }
+    .nav-tabs > li > a {
+        color: #8b949e !important;
+        background-color: transparent !important;
+        border: 1px solid transparent !important;
+    }
+    .nav-tabs > li > a:hover,
+    .nav-tabs > li > a:focus {
+        background-color: #161b22 !important;
+        color: #c9d1d9 !important;
+        border-color: #30363d #30363d transparent !important;
+    }
+    .nav-tabs > li.active > a,
+    .nav-tabs > li.active > a:focus,
+    .nav-tabs > li.active > a:hover {
+        color: #58a6ff !important;
+        background-color: #0d1117 !important;
+        border: 1px solid #30363d !important;
+        border-bottom-color: transparent !important;
+    }
+
+    /* Dark Mode reCAPTCHA (Invert Filter) */
+    iframe[title*="reCAPTCHA"],
+    iframe[src*="recaptcha"] {
+        filter: invert(0.9) hue-rotate(180deg) !important;
+        border-radius: 4px;
+    }
+}
